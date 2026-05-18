@@ -38,6 +38,7 @@ Remove-Item backend.ps1 -Force -ErrorAction SilentlyContinue
 Remove-Item README.md -Force -ErrorAction SilentlyContinue
 Remove-Item .gitignore -Force -ErrorAction SilentlyContinue
 Remove-Item .gitattributes -Force -ErrorAction SilentlyContinue
+Remove-Item main.cpp -Force -ErrorAction SilentlyContinue
 
 # remove src folder safely
 if (Test-Path .\src) {
