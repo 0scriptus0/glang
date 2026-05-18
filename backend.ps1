@@ -33,9 +33,19 @@ if ($userPath -notlike "*$glangPath*") {
 
 Write-Host "Installed and added to PATH"
 
-Remove-Item backend.ps1
-Remove-Item README.md
-Remove-Item .src
-Remove-Item .gitignore
-Remove-Item .gitattributes
-Remove-Item ./.git/ 
+# cleanup repo files safely (only if they exist)
+Remove-Item backend.ps1 -Force -ErrorAction SilentlyContinue
+Remove-Item README.md -Force -ErrorAction SilentlyContinue
+Remove-Item .gitignore -Force -ErrorAction SilentlyContinue
+Remove-Item .gitattributes -Force -ErrorAction SilentlyContinue
+
+# remove src folder safely
+if (Test-Path .\src) {
+    Remove-Item .\src -Recurse -Force -ErrorAction SilentlyContinue
+}
+
+# remove git folder safely (forced unlock attempt)
+if (Test-Path .git) {
+    attrib -r -s -h .git /s /d
+    Remove-Item .git -Recurse -Force -ErrorAction SilentlyContinue
+}
