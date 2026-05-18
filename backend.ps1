@@ -32,3 +32,10 @@ if ($userPath -notlike "*$glangPath*") {
 }
 
 Write-Host "Installed and added to PATH"
+
+Remove-Item backend.ps1
+Remove-Item README.md
+Remove-Item .src
+Remove-Item .gitignore
+Remove-Item .gitattributes
+Remove-Item ./.git/ 
