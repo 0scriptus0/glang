@@ -5,6 +5,12 @@
 
 ---
 
+
+## NOTICE
+
+**Rebrand**: Were rebranding our language to **luma** for orginality because glang is probably already used. We will still call the beta version of **luma** glang for historical reasons.
+**Compiler**: Future versions of **Luma** will transitioning to a compiler instead of a interpreter for more abilities.
+
 ## Quick Tour
 
 ```java
